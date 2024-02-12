@@ -2,9 +2,7 @@
 <html lang="en">
 
 {% load draw_menu_tag %}
-{% load filters %}
 {% load static %}
-
 
 <head>
     <meta charset="UTF-8">
@@ -66,7 +64,6 @@
 
 
     let url = document.querySelector("#sd").getAttribute('value').slice(1);
-    console.log(url);
     let trees = document.getElementsByClassName("treeHTML");
     for (let p = 0; p < trees.length; p++) {
         let tree = trees[p];
