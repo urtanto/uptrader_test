@@ -1,1 +1,17 @@
-<p>Робит</p>
+{% load static %}
+{% load filters %}
+
+
+
+{% for item in members %}
+    {% if item.is_url %}
+        <div><a href="{{ item.url }}">{{ item.name }}</a></div>
+    {% else %}
+        <div>{{ item.name }}
+            <details>
+            <summary></summary>
+            {% include "tree.html" with members=item.members only %}
+            </details>
+        </div>
+    {% endif %}
+{% endfor %}

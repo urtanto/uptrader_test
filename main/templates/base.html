@@ -1,7 +1,8 @@
-{% load draw_menu_tag %}
 <!DOCTYPE html>
 <html lang="en">
 
+{% load draw_menu_tag %}
+{% load filters %}
 {% load static %}
 
 
@@ -14,11 +15,81 @@
 <header class="nav">
     <h1 class="text">Тестовое задание:</h1>
 </header>
-{% draw_menu 'main_menu' %}
+<div class="treeHTML">Древовидное меню
+    {% draw_menu '1' %}
+</div>
+<div class="treeHTML">Древовидное меню
+    {% draw_menu '4' %}
+</div>
 <div class="body">
 
 </div>
-<p> {{ url }}</p>
 {% block content %}{% endblock %}
+<div id="sd" value="{{ url }}"></div>
+
+<script>
+    function open_div(elem) {
+        console.log(elem.children);
+        for (let i = 0; i < elem.children.length; i++) {
+            console.log(elem.children[i]);
+            console.log(elem.children[i].tagName.toLowerCase());
+            if (elem.children[i].tagName.toLowerCase() === 'summary') {
+                console.log("skip");
+                continue;
+            }
+            if (elem.children[i].tagName.toLowerCase() === 'details') {
+                open_div(elem.children[i]);
+            }
+            try {
+                console.log(elem.children[i].children[0].tagName.toLowerCase());
+                if (elem.children[i].children[0].tagName.toLowerCase() === 'details') {
+                    let res = open_div(elem.children[i].children[0])
+                    if (res) {
+                        elem.open = true;
+                        return true;
+                    }
+                }
+            } catch (error) {
+            }
+            console.log("\\/");
+            try {
+                console.log(elem.children[i].href.split("/").slice(3).join("/"));
+                if (elem.children[i].href.split("/").slice(3).join("/") === url) {
+                    elem.open = true;
+                    return true;
+                }
+
+            } catch (error) {
+            }
+            console.log("-----");
+            try {
+                console.log(elem.children[i].children[0].href.split("/").slice(3).join("/"));
+
+                if (elem.children[i].children[0].href.split("/").slice(3).join("/") === url) {
+                    elem.open = true;
+                    return true;
+                }
+            } catch (error) {
+            }
+            console.log("/\\");
+        }
+    }
+
+
+    let url = document.querySelector("#sd").getAttribute('value');
+    console.log(url);
+    let trees = document.getElementsByClassName("treeHTML");
+    for (let p = 0; p < trees.length; p++) {
+        let tree = trees[p];
+        let children = tree.children
+        for (let i = 0; i < children.length; i++) {
+            open_div(children[i]);
+        }
+    }
+let children = tree.children
+    for (let i = 0; i < children.length; i++) {
+        open_div(children[i]);
+    }
+</script>
 </body>
 </html>
