@@ -25,23 +25,18 @@
 
 </div>
 {% block content %}{% endblock %}
-<div id="sd" value="{{ url }}"></div>
+<div id="sd" value="{{ request.path }}"></div>
 
 <script>
     function open_div(elem) {
-        console.log(elem.children);
         for (let i = 0; i < elem.children.length; i++) {
-            console.log(elem.children[i]);
-            console.log(elem.children[i].tagName.toLowerCase());
             if (elem.children[i].tagName.toLowerCase() === 'summary') {
-                console.log("skip");
                 continue;
             }
             if (elem.children[i].tagName.toLowerCase() === 'details') {
                 open_div(elem.children[i]);
             }
             try {
-                console.log(elem.children[i].children[0].tagName.toLowerCase());
                 if (elem.children[i].children[0].tagName.toLowerCase() === 'details') {
                     let res = open_div(elem.children[i].children[0])
                     if (res) {
@@ -51,9 +46,7 @@
                 }
             } catch (error) {
             }
-            console.log("\\/");
             try {
-                console.log(elem.children[i].href.split("/").slice(3).join("/"));
                 if (elem.children[i].href.split("/").slice(3).join("/") === url) {
                     elem.open = true;
                     return true;
@@ -61,22 +54,18 @@
 
             } catch (error) {
             }
-            console.log("-----");
             try {
-                console.log(elem.children[i].children[0].href.split("/").slice(3).join("/"));
-
                 if (elem.children[i].children[0].href.split("/").slice(3).join("/") === url) {
                     elem.open = true;
                     return true;
                 }
             } catch (error) {
             }
-            console.log("/\\");
         }
     }
 
 
-    let url = document.querySelector("#sd").getAttribute('value');
+    let url = document.querySelector("#sd").getAttribute('value').slice(1);
     console.log(url);
     let trees = document.getElementsByClassName("treeHTML");
     for (let p = 0; p < trees.length; p++) {
@@ -86,7 +75,7 @@
             open_div(children[i]);
         }
     }
-let children = tree.children
+    let children = tree.children
     for (let i = 0; i < children.length; i++) {
         open_div(children[i]);
     }

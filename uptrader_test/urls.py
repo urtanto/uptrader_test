@@ -20,12 +20,11 @@ from main.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('a', index_page, name='a'),
+    path('a', index_page, name='a'),  # для теста
     path('b', index_page, name='b'),
     path('c', index_page, name='c'),
     path('d', index_page, name='d'),
     path('e', index_page, name='e'),
     path('f', index_page, name='f'),
-    path('g', index_page, name='chlen'),
     path('', index_page, name='home'),
 ]

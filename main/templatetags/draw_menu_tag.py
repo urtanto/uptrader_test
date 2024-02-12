@@ -8,6 +8,11 @@ register = template.Library()
 
 
 def get_members(menu: Menu) -> list:
+    """
+    Функция собирает структуру таблицы проходясь по всем ее членам
+
+    :param menu: объект бд
+    """
     members = []
     for i in list(menu.menu_set.all()):
         members.append({
@@ -26,6 +31,9 @@ def get_members(menu: Menu) -> list:
 
 @register.inclusion_tag("tree.html", name="draw_menu")
 def tree_menu(menu: str):
+    """
+    :param menu: передается название таблицы из бд, которую нужно отрисовать
+    """
     members = get_members(Menu.objects.get(name=menu))
     return {
         "members": members,
