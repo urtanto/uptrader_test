@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
+{% load static %}
+
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ pagename }} - TestCase</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
 </head>
 <body>
+<header class="nav">
+    <h1 class="text">Тестовое задание:</h1>
+</header>
+<div class="body">
 
+</div>
+<p> {{ url }}</p>
+{% block content %}{% endblock %}
 </body>
 </html>

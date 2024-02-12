@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+}
+
+.content{
+    margin: 2px;
+}
+
+.nav {
+    display: block;
+    height: 10vh;
+    padding: 1vh 5vh 1vh 5vh;
+    background-color: black;
+}
+
+.nav .text {
+    color: white;
+}
