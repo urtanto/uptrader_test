@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea2f7434-d19c-4c56-a4d5-0bb91456055d" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/main/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templatetags/draw_menu_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/templatetags/draw_menu_tag.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uptrader_test/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/uptrader_test/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uptrader_test/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/uptrader_test/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +39,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2cGDHox3N3AFDPz3nHQjEmzSQ4w" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,7 +55,7 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "frontend/base",
+    "git-widget-placeholder": "backend/tags",
     "last_opened_file_path": "/home/urtanto/PycharmProjects/FinE",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
